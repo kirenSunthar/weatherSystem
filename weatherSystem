@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class WeatherSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the country name:");
+        String country = scanner.nextLine();
+        System.out.println("Enter the month:");
+        String month = scanner.nextLine();
+
+        String season = getSeason(country, month);
+        System.out.println("The season in " + country + " in " + month + " is " + season);
+
+        System.out.println("Enter the temperature:");
+        int temperature = scanner.nextInt();
+
+        String temperatureDescription = getTemperatureDescription(country, temperature);
+        System.out.println("The temperature in " + country + " is " + temperatureDescription);
+    }
