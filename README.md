@@ -19,7 +19,7 @@ This is the Weather System designed for Software Engineering Project Assignment 
 
 7. To check whether the temperature in a country is hot or cold, enter the country name followed by the temperature separated by a comma. For example, "USA, 25" will display "USA is hot".
 
-***For renning code in Java***
+***For running code in Java***
 1. To run a Java program, you need to use the java command in the terminal or command prompt. Here are the steps to run a Java program:
 
 2. Open a command prompt or terminal window.
@@ -31,7 +31,7 @@ This is the Weather System designed for Software Engineering Project Assignment 
 javac HelloWorld.java
 
 
-***Weather System***
+***Weather System***>
 *This system allows users to enter a country name and month of the year and display the season in the country. It also allows users to enter a temperature and display whether the country is hot or cold.*
 
 Once the system has launched, follow the on-screen prompts to enter the country name and month of the year. The system will display the season in the country based on the month entered. To check whether the temperature in a country is hot or cold, enter the country name followed by the temperature separated by a comma.
