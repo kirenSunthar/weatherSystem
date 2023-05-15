@@ -1,0 +1,28 @@
+public static String getTemperatureDescription(String country, int temperature) {
+        int averageTemperature;
+
+        switch (country) {
+            case "USA":
+                averageTemperature = 13;
+                break;
+            case "Canada":
+                averageTemperature = -5;
+                break;
+            case "Brazil":
+                averageTemperature = 25;
+                break;
+            case "Australia":
+                averageTemperature = 20;
+                break;
+            default:
+                averageTemperature = 0;
+        }
+
+        if (temperature > averageTemperature + 10) {
+            return "Hot";
+        } else if (temperature < averageTemperature - 10) {
+            return "Below average";
+        } else {
+            return "Above average";
+        }
+    }
