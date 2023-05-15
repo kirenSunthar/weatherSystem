@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class WeatherSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the country name:");
+        String country = scanner.nextLine();
+        System.out.println("Enter the month:");
+        String month = scanner.nextLine();
+
+        String season = getSeason(country, month);
+        System.out.println("The season in " + country + " in " + month + " is " + season);
+
+        System.out.println("Enter the temperature:");
+        int temperature = scanner.nextInt();
+
+        String temperatureDescription = getTemperatureDescription(country, temperature);
+        System.out.println("The temperature in " + country + " is " + temperatureDescription);
+    }
+
+    public static String getSeason(String country, String month) {
+        // Assume that seasons in countries in the Northern Hemisphere are opposite to those in the Southern Hemisphere
+        String[] winterCountries = {"Canada", "Russia", "China", "Japan"};
+        String[] summerCountries = {"Australia", "Brazil", "South Africa", "India"};
+        String season;
+
+        if (isInArray(winterCountries, country)) {
+            season = "Winter";
+        } else if (isInArray(summerCountries, country)) {
+            season = "Summer";
+        } else if (month.equalsIgnoreCase("December") || month.equalsIgnoreCase("January") || month.equalsIgnoreCase("February")) {
+            season = "Winter";
+        } else if (month.equalsIgnoreCase("March") || month.equalsIgnoreCase("April") || month.equalsIgnoreCase("May")) {
+            season = "Spring";
+        } else if (month.equalsIgnoreCase("June") || month.equalsIgnoreCase("July") || month.equalsIgnoreCase("August")) {
+            season = "Summer";
+        } else {
+            season = "Fall";
+        }
+
+        return season;
+    }
+
+    public static String getTemperatureDescription(String country, int temperature) {
+        int averageTemperature;
+
+        switch (country) {
+            case "USA":
+                averageTemperature = 13;
+                break;
+            case "Canada":
+                averageTemperature = -5;
+                break;
+            case "Brazil":
+                averageTemperature = 25;
+                break;
+            case "Australia":
+                averageTemperature = 20;
+                break;
+            default:
+                averageTemperature = 0;
+        }
+
+        if (temperature > averageTemperature + 10) {
+            return "Hot";
+        } else if (temperature < averageTemperature - 10) {
+            return "Below average";
+        } else {
+            return "Above average";
+        }
+    }
+
+    public static boolean isInArray(String[] array, String value) {
+        for (String item : array) {
+            if (item.equalsIgnoreCase(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
