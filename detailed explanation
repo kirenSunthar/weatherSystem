@@ -1,0 +1,5 @@
+The program first prompts the user to enter a country name and a month, which are stored in the country and month variables using the Scanner class. The getSeason() method is then called, passing in the country and month as arguments, and the resulting season is stored in the season variable.
+
+The program then prompts the user to enter a temperature, which is stored in the temperature variable using the Scanner class. The getTemperatureDescription() method is then called, passing in the country and temperature as arguments, and the resulting temperature description (hot, above average, or below average) is stored in the temperatureDescription variable.
+
+The getSeason() method uses a combination of arrays and conditionals to determine the seasons in the country.
